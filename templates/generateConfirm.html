@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>개인정보처리방침 미리보기</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='generateConfirm.css') }}">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var num = 1; // 시작 번호
+            var security_num = 1;
+            var elements = document.querySelectorAll('h2');
+
+            elements.forEach(function (element) {
+                element.innerHTML = element.innerHTML.replace('{{num}}', num++);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="header"><strong>{{ name }}</strong> 개인정보처리방침 미리보기</div>
+    <p><strong>{{ name }}</strong>는 정보주체의 자유와 권리 보호를 위해 「개인정보 보호법」 및 관계 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고
+        있습니다.<br>
+        이에 「개인정보 보호법」 제 30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보
+        처리방침을 수립/공개합니다.
+    </p>
+
+    <!-- 제 1조 -->
+   <div>
+        <h2>{{ num }}. 개인정보의 처리목적 및 항목, 보유기간[필수]</h2>
+        <div>
+            <p><strong>{{ name }}</strong>는 법령의 규정과 정보주체의 동의에 의해서만 개인정보를 처리합니다.</p>
+            <p>처리하고 있는 개인정보는 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행합니다. </p>
+            <p><strong>{{ name }}</strong>에서 처리하는 개인정보는 소관업무 및 법령에서 정한 최소한의 개인정보만을 처리하며 자세한 사항은 각 부서에서 운영하는 소관 홈페이지에
+                게재하여
+                정보주체가 확인할 수 있도록 안내를 하고 있습니다.</p>
+        </div>
+        {# 학적관리 #}
+        <h3 style="text-align: center">1) 학적관리</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in academic_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in academic_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 장학관리 #}
+        <h3 style="text-align: center">2) 장학관리</h3>
+        <div class="table-container">
+            <table border="1">
+                <thead>
+                <tr>
+                    {% for col in scholarship_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                {% for row in scholarship_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 수강관리 #}
+        <h3 style="text-align: center">3) 수강관리</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in grade_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in grade_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 졸업생관리 #}
+        <h3 style="text-align: center">4) 졸업생관리</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in graduate_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in graduate_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 입시관리 #}
+        <h3 style="text-align: center">5) 입시관리</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in newStudent_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in newStudent_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 장애학생지원 #}
+        <h3 style="text-align: center">6) 장애학생지원</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in disorder_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in disorder_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 홈페이지관리 #}
+        <h3 style="text-align: center">7) 홈페이지관리</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in homepage_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in homepage_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        {# 기타 #}
+        <h3 style="text-align: center">8) 기타 유형</h3>
+        <div class="table-container">
+            <table border="1">
+                <tr>
+                    {% for col in etc_df.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in etc_df.itertuples() %}
+                    <tr>
+                        {% for item in row[1:] %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+    </div>
+    <br>
+    <!-- 제 2조 -->
+    <div>
+        <h2>{{ num }}. 개인정보의 파기 절차 및 방법[필수]</h2>
+        <div>
+            <pre>{{ destructionProcedure }}</pre>
+        </div>
+    </div>
+    <br>
+    <!-- 제 3조 -->
+    <div>
+        <h2>{{ num }}. 정보주체의 권리, 의무 및 행사방법[필수]</h2>
+        <div>
+            <pre>{{rightsAndObligations}}</pre></div>
+    </div>
+    <br>
+    <!-- 제 4조 -->
+    <div>
+        <h2>{{ num }}. 개인정보의 안전성 확보조치[필수]</h2>
+        <div>
+            <p><strong>{{ name }}</strong>는 「개인정보 보호법」 제29조에 따라 개인정보의 안전성 확보를 위해 다음과 같은 기술적/관리적 및 물리적 조치를 취하고 있습니다.
+            </p>
+            {% for selected_data, result_message in combined_data.items() %}
+                <div>
+                    <p><strong>{{ loop.index }}) {{ selected_data }}</strong></p>
+                    <p>{{ result_message }}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <br>
+    <!-- 제 5조 -->
+    <div>
+        <h2>{{ num }}. 개인정보 보호책임자에 관한 사항[필수]</h2>
+        <p><strong>{{ name }}</strong>는 「개인정보 보호법」 제31조제1항에 의거 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인정보 보호책임자 및
+            분야별
+            책임자를 지정하고 있습니다.</p>
+        <br>
+        <div>
+            <p><strong>▶ 개인정보 보호책임자</strong></p>
+            <p>성명: <strong>{{ chargeName }}</strong></p>
+            <p>소속: <strong>{{ chargeAffiliation }}</strong></p>
+            <p>연락처: <strong>{{ chargePhone }} / {{ chargeEmail }}</strong></p>
+            {% if chargeEtc %}
+                <p>etc.: <strong>{{ chargeEtc }}</strong></p>
+            {% endif %}
+        </div>
+        <br>
+        {% if department %}
+            <div>
+                <p>▶ 개인정보보호 담당부서 </p>
+                <p>부서명: <strong>{{ department }}</strong></p>
+                <p>담당자: <strong>{{ departmentName }}</strong></p>
+                <p>연락처: <strong>{{ departmentPhone }} / {{ departmentEmail }}</strong></p>
+                <p>Etc.: <strong>{{ departmentEtc }}</strong></p>
+            </div>
+            <br>
+        {% endif %}
+        <div>
+            <p><strong>{{ name }}</strong>의 서비스(또는 사업)를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자
+                및
+                담당부서로 문의해주시기 바랍니다.</p>
+        </div>
+    </div>
+    <br>
+
+    <!-- 제 6조 -->
+    <div>
+        <h2>{{ num }}. 개인정보의 열람창구 접수/처리[필수]</h2>
+        <p>정보주체는 「개인정보 보호법」 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. </p>
+        <p><strong>{{ name }}</strong>는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</p>
+        <br>
+        <div>
+            <p><strong>▶ 개인정보 열람청구 접수·처리 부서</strong></p>
+            <p>부서명: <strong>{{ receipt_department }}</strong></p>
+            <p>담당자: <strong>{{ receipt_departmentName }}</strong></p>
+            <p>연락처: <strong>{{ receipt_departmentPhone }} / {{ receipt_departmentEmail }}</strong></p>
+            {% if chargeFax %}
+                <p>Etc.: <strong>{{ receipt_departmentEtc }}</strong></p>
+            {% endif %}
+        </div>
+        <br>
+        <div>
+            <p>정보주체는 제1항의 접수처리부서 이외에, 개인정보보호위원회의 ‘개인정보보호 종합지원 포털(www.privacy.go.kr)’을 통하여서도 개인정보 열람청구를 하실 수
+                있습니다.</p>
+            <p>▶ 개인정보보호위원회 개인정보보호 종합지원 포털 → 개인정보 민원 → 민원마당 → 개인정보 열람등 요구 (공공 아이핀을 통한 실명인증 필요)</p>
+        </div>
+    </div>
+    <br>
+
+    <!-- 제 7조 -->
+    <div>
+        <h2>{{ num }}. 정보주체의 권익침해에 대한 구제방법[필수]</h2>
+        <pre>{{remedyMethod}}</pre>
+    </div>
+    <br>
+
+    <!-- 제 8조 -->
+    <div>
+        <h2>{{ num }}. 개인정보 처리방침의 변경 사항[필수]</h2>
+        <p>이 개인정보 처리방침은 <strong>{{ current_date }}</strong>부터 적용됩니다.</p>
+        <p><strong>{{ name }}</strong>은(는) 「개인정보 보호법」 제30조(개인정보처리방침의 수립 및 공개)에 따라 이 전의 개인정보 처리방침을 공개합니다. </p>
+    </div>
+    <br>
+
+    <!-- end -->
+    <div class="submit-div">
+        <button onclick="goBack()" class="submit-button">뒤로 가기</button>
+        <a href="/nextForm">
+            <button class="submit-button">다음으로</button>
+        </a>
+    </div>
+
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 처리방침 필수 기재사항</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/generateMain.css">
+    <style>
+        textarea{
+            height: 80px;
+            width: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var num = 1; // 시작 번호
+            var elements = document.querySelectorAll('h2');
+
+            elements.forEach(function(element) {
+                element.innerHTML = element.innerHTML.replace('{{num}}', num++);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="header">
+    개인정보 처리방침 필수 기재사항
+</div>
+<div class="form-container">
+    <form id="privacyForm" action="/generateConfirm" method="post" enctype="multipart/form-data">
+        <!-- 2. 대학교 이름 입력 -->
+        <div class="form-group">
+            <h2> {{num}}. 대학교 이름</h2>
+            <input type="text" id="name" name="name" class="form-input" placeholder="ex) OO대학교" required>
+        </div>
+
+        <!-- 3. 처리목적 및 항목 파일 선택 -->
+        <div class="form-group">
+            <!--                ※ 본교가 법령에 근거하여 수집·보유하고 있는 주요 개인정보파일의 상세내용은 개인정보보호 포털(www.privacy.go.kr)에 접속 후 개인정보파일 목록 검색란에서 기관명으로-->
+            <!--                조회하시면 확인 하실 수 있습니다. ☞ Click<br><br>-->
+            <h2>{{num}}. 개인정보의 처리목적 및 항목, 보유기간</h2>
+            <!-- 사용자 정의 파일 선택 버튼 -->
+            <button type="button" id="customFileBtn" class="btn">파일 선택 (.xlsx)</button>
+            <!-- 실제 파일 입력 필드는 숨김 처리 -->
+            <input type="file" id="customFile" name="file" accept=".xlsx" hidden required>
+            <!-- 선택된 파일 이름을 표시할 공간 -->
+            <span id="customFileName">선택된 파일 없음</span>
+            <p> ‣ 학교별 개인정보파일의 정보를 이용해서 작성됩니다. 귀 기관에서 관리하는 개인정보보호 파일을 xlsx 형식으로 업로드 해주세요.<br>
+                ※ 개인정보보호 포털>개인서비스>정보주체 권리행사>개인정보 열람등요구>개인정보파일 검색(
+                <a href="https://www.privacy.go.kr/front/wcp/dcl/per/personalInfoFileSrhList.do">https://www.privacy.go.kr/front/wcp/dcl/per/personalInfoFileSrhList.do</a>
+                )에 접속 > 검색란에서 대학교명으로 조회 > 엑셀 파일
+                다운로드
+            </p>
+            <p>
+                ‣ 대학교에서 많이 처리되는 개인정보 항목을 다음과 같이 유형별로 묶어 작성합니다.<br>
+                ※ 업로드한 파일 내 '개인정보파일의 운영 목적', '개인정보파일의 명칭' 내 다음과 같은 키워드가 존재할 때 해당 유형으로 분류하였습니다.
+            </p>
+            <table>
+                <thead>
+                <tr>
+                    <th>유형</th>
+                    <th>운영목적 키워드</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>학적관리</td>
+                    <td>학사, 행정</td>
+                </tr>
+                <tr>
+                    <td>장학관리</td>
+                    <td>장학</td>
+                </tr>
+                <tr>
+                    <td>수강관리</td>
+                    <td>수강, 성적, 수업</td>
+                </tr>
+                <tr>
+                    <td>졸업생관리</td>
+                    <td>졸업</td>
+                </tr>
+                <tr>
+                    <td>입시관리</td>
+                    <td>신입, 입시</td>
+                </tr>
+                <tr>
+                    <td>장애학생지원</td>
+                    <td>장애</td>
+                </tr>
+                <tr>
+                    <td>홈페이지관리</td>
+                    <td>홈페이지</td>
+                </tr>
+                </tbody>
+
+            </table>
+            <!--            테이블 내용보기-->
+        </div>
+
+        <!-- 4. 개인정보의 파기 절차 및 방법 -->
+        <div class="form-group checkbox-group">
+            <h2 class="checkbox-label">{{num}}. 개인정보의 파기 절차 및 방법</h2>
+            ※ 해당 항목은 의무적으로 작성해야 할 필수 항목으로 본 프로그램의 추천문구로 작성됩니다. 필요 시 수정 가능합니다.
+            <div class="form-input"><textarea name="destructionProcedure">본 대학교는 「개인정보보호법」 제21조(개인정보의 파기)에 따라 원칙적으로 처리목적이 달성된 개인정보는 지체 없이 파기합니다.
+다만, 다른 법령에 따라 보존하여야 하는 경우에는 그러하지 않을 수 있으며 관련 법령, 조문 및 보존하는 개인정보 항목을 게재하여 정보주체가 확인할 수 있도록 안내를 하고 있습니다.
+파기의 절차, 기한 및 방법은 다음과 같습니다.
+
+1. 파기 절차
+개인정보는 목적 달성 후 즉시 파기 또는 별도의 공간에 옮겨져 내부 방침 및 기타 관련 법령에 따라 일정 기간 저장된 후 파기됩니다. 별도의 공간으로 옮겨진 개인 정보는 법률에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다.
+2. 파기 기한
+개인정보의 보유기간이 경과된 경우에는 보유기간의 종료일로부터 5일 이내에, 개인정보의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그 개인정보가 불필요하게 되었을 때에는 개인정보의 처리가 불필요한 것으로 인정되는 날로부터 5일 이내에 그 개인정보를 파기합니다.
+3. 파기 방법
+전자적 파일형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 파기합니다. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다. </textarea>
+            </div>
+        </div>
+
+        <!-- 5. 정보주체와 법정대리인의 권리/의무 및 행사방법 -->
+        <div class="form-group checkbox-group">
+            <h2 class="checkbox-label">{{num}}. 정보주체와 법정대리인의 권리/의무 및 행사방법</h2>
+            해당 항목은 의무적으로 작성해야 할 필수 항목으로 본 프로그램의 추천문구로 작성됩니다. 필요 시 수정 가능합니다.
+            <div class="form-input">
+                <textarea name="rightsAndObligations">1. 정보주체(만 14세 미만인 경우에는 법정대리인을 말함)는 언제든지 개인정보 열람·정정·삭제·처리정지 요구 등의 권리를 행사할 수 있습니다.
+2. 권리 행사는 개인정보위에 대해 ｢개인정보 보호법｣ 시행령 제41조 제1항에 따라 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며, 개인정보위는 이에 대해 지체없이 조치하겠습니다.
+3. 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수도 있습니다. 이 경우 “개인정보 처리 방법에 관한 고시(제2020-7호)” 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.
+4. 개인정보 열람 및 처리정지 요구는 ｢개인정보 보호법｣ 제35조 제4항, 제37조 제2항에 의하여 정보주체의 권리가 제한 될 수 있습니다.
+5. 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.
+6. 개인정보위는 정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</textarea>
+            </div>
+        </div>
+
+        <!-- 6. 개인정보의 안정성 확보조치에 관한 사항 -->
+        <div class="form-group checkbox-group">
+            <h2 class="checkbox-label">{{num}}. 개인정보의 안전성 확보조치에 관한 사항</h2>
+            <div class="checkbox-option">
+                <input type="checkbox" id="minimalStaffTraining" name="securityMeasures" value="minimalStaffTraining"
+                       class="checkbox-input">
+                <label for="minimalStaffTraining" class="checkbox-custom-label">개인정보 취급 직원의 최소화 및 교육</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="regularSelfAudit" name="securityMeasures" value="regularSelfAudit"
+                       class="checkbox-input"
+                >
+                <label for="regularSelfAudit" class="checkbox-custom-label">정기적인 자체 감사 실시</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="internalManagementPlan" name="securityMeasures"
+                       value="internalManagementPlan"
+                       class="checkbox-input">
+                <label for="internalManagementPlan" class="checkbox-custom-label">내부관리계획의 수립 및 시행</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="logManagement" name="securityMeasures" value="logManagement"
+                       class="checkbox-input"
+                >
+                <label for="logManagement" class="checkbox-custom-label">접속기록의 보관 및 위 변조 방지</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="dataEncryption" name="securityMeasures" value="dataEncryption"
+                       class="checkbox-input"
+                >
+                <label for="dataEncryption" class="checkbox-custom-label">개인정보의 암호화</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="securitySoftware" name="securityMeasures" value="securitySoftware"
+                       class="checkbox-input"
+                >
+                <label for="securitySoftware" class="checkbox-custom-label">보안프로그램 설치 및 주기적 점검·갱신</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="accessRestriction" name="securityMeasures" value="accessRestriction"
+                       class="checkbox-input"
+                >
+                <label for="accessRestriction" class="checkbox-custom-label">개인정보에 대한 접근 제한</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="unauthorizedAccessControl" name="securityMeasures"
+                       value="unauthorizedAccessControl" class="checkbox-input">
+                <label for="unauthorizedAccessControl" class="checkbox-custom-label">비인가자에 대한 출입 통제</label>
+            </div>
+            <div class="checkbox-option">
+                <input type="checkbox" id="documentSecurity" name="securityMeasures" value="documentSecurity"
+                       class="checkbox-input"
+                >
+                <label for="documentSecurity" class="checkbox-custom-label">문서보안을 위한 잠금장치 사용</label>
+            </div>
+        </div>
+
+        <!-- 7. 개인정보 보호책임자(담당부서) -->
+        <div class="form-group">
+            <h2>{{num}}. 개인정보 보호책임자</h2>
+            <div>
+                <label>개인정보 보호책임자(필수)</label>
+                <div>
+                    <input type="text" id="chargeName" name="chargeName" class="form-input" placeholder="이름"
+                           required>
+                    <input type="text" id="chargeAffiliation" name="chargeAffiliation" class="form-input"
+                           placeholder="소속"
+                           required>
+                    <input type="text" id="chargePhone" name="chargePhone" class="form-input" placeholder="전화번호"
+                           required>
+                    <input type="email" id="chargeEmail" name="chargeEmail" class="form-input" placeholder="이메일"
+                           required>
+                    <input type="text" id="chargeEtc" name="chargeEtc" class="form-input" placeholder="기타(FAX 등)">
+                </div>
+            </div>
+            <div>
+                <label>개인정보보호 담당부서(선택)</label>
+                <div>
+                    <input type="text" id="department" name="department" class="form-input" placeholder="부서명">
+                    <input type="text" id="departmentName" name="departmentName" class="form-input" placeholder="담당자">
+                    <input type="text" id="departmentPhone" name="departmentPhone" class="form-input"
+                           placeholder="전화번호">
+                    <input type="email" id="departmentEmail" name="departmentEmail" class="form-input"
+                           placeholder="이메일">
+                    <input type="text" id="departmentEtc" name="departmentEtc" class="form-input"
+                           placeholder="기타(FAX 등)">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 8. 개인정보의 열람청구를 접수/처리하는 부서 -->
+        <div class="form-group">
+            <h2>{{num}}. 개인정보의 열람청구를 접수/처리하는 부서</h2>
+            <input type="text" id="receipt_department" name="receipt_department" class="form-input" placeholder="부서명"
+                   required>
+            <input type="text" id="receipt_departmentName" name="receipt_departmentName" class="form-input"
+                   placeholder="담당자" required>
+            <input type="text" id="receipt_departmentPhone" name="receipt_departmentPhone" class="form-input"
+                   placeholder="전화번호" required>
+            <input type="email" id="receipt_departmentEmail" name="receipt_departmentEmail" class="form-input"
+                   placeholder="이메일" required>
+            <input type="text" id="receipt_departmentEtc" name="receipt_departmentEtc" class="form-input"
+                   placeholder="기타(FAX 등)">
+        </div>
+
+        <!-- 9. 정보주체의 권익침해에 대한 구제방법 -->
+        <div class="form-group checkbox-group">
+            <h2 class="checkbox-label">{{num}}. 정보주체의 권익침해에 대한 구제방법</h2>
+            해당 항목은 의무적으로 작성해야 할 필수 항목으로 본 프로그램의 추천문구로 작성됩니다. 필요 시 수정 가능합니다.
+            <div class="form-input">
+                <textarea name="remedyMethod">정보주체는 아래의 기관을 통해 개인정보침해에 대한 피해구제나 상담 등을 신청할 수 있습니다.
+ - 아래의 기관은 본 대학교 와(과)는 별개의 기관으로서, 개인정보처리자명 의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다
+1. 개인정보분쟁조정위원회 : (국번없이) 1833-6972 (www.kopico.go.kr)
+2. 개인정보침해신고센터 : (국번없이) 118 (privacy.kisa.or.kr)
+3. 대검찰청 : (국번없이) 1301 (www.spo.go.kr)
+4. 경찰청 : (국번없이) 182 (ecrm.cyber.go.kr)</textarea>
+            </div>
+        </div>
+
+        <!-- 10. 개인정보 처리방침의 변경 사항 -->
+        <div class="form-group">
+            <h2>{{num}}. 개인정보 처리방침의 변경 사항</h2>
+            <div>
+                <label>현재 처리방침 적용 날짜</label>
+                <input type="date" id="current_date" name="current_date" class="form-input" required>
+            </div>
+        </div>
+
+
+        <!-- 제출 버튼 -->
+        <div class="submit-div">
+            <button type="submit" class="submit-button" name="action" value="confirm">미리보기</button>
+            <button type="submit" class="submit-button" name="action" value="nextform">다음 폼으로 이동</button>
+        </div>
+    </form>
+</div>
+<script>
+    document.getElementById('customFileBtn').addEventListener('click', function () {
+        document.getElementById('customFile').click();
+    });
+
+    document.getElementById('customFile').addEventListener('change', function () {
+        var fileName = this.files[0].name;
+        document.getElementById('customFileName').textContent = fileName;
+    });
+
+    document.getElementById('addDateButton').addEventListener('click', function() {
+        // 새로운 div 요소 생성
+        var newDiv = document.createElement('div');
+
+        // 첫 번째 날짜 입력 필드 생성 및 설정
+        var newInput1 = document.createElement('input');
+        newInput1.type = 'date';
+        newInput1.name = 'start_date';
+        newInput1.className = 'form-input';
+
+        // <p> 요소 생성 및 '~' 텍스트 설정
+        var pElement = document.createElement('p');
+        pElement.innerText = ' ~ '; // 혹은 pElement.textContent = ' ~ ';
+        pElement.style.display = 'inline'; // <p>를 인라인 요소처럼 보이도록 설정
+
+        // 두 번째 날짜 입력 필드 생성 및 설정
+        var newInput2 = document.createElement('input');
+        newInput2.type = 'date';
+        newInput2.name = 'end_date';
+        newInput2.className = 'form-input';
+
+        // 새로운 div에 첫 번째 입력 필드, <p> 요소, 두 번째 입력 필드 추가
+        newDiv.appendChild(newInput1);
+        newDiv.appendChild(pElement);
+        newDiv.appendChild(newInput2);
+
+        // 날짜 입력 필드를 담고 있는 컨테이너에 새로운 div 요소 추가
+        document.getElementById('dateInputsContainer').appendChild(newDiv);
+    });
+
+</script>
+<script>
+    window.onload = function () {
+        var message = "{{ error }}";
+        if (message) {
+            alert(message);
+        }
+    }
+</script>
+</body>
+</html>
