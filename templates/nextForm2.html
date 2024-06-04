@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 처리방침 해당 시 권장 기재사항</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/nextForm2.css">
+
+
+</head>
+<body>
+<div class="header">
+    개인정보 처리방침 해당 시 권장 기재사항
+</div>
+<div class="form-container">
+    <form id="privacyForm" action="/nextForm2Confirm" method="post" enctype="multipart/form-data">
+        <!-- 첫번째 checkbox -->
+        <div class="form-group">
+            <div class="checkbox-option">
+                <input type="checkbox" id="checkBox1" name="checkBox1"
+                       value="checkBox1"
+                       class="checkbox-input">
+                <label for="checkBox1" class="checkbox-custom-label"><strong>영상정보처리기기 운영 관리에 관한 사항</strong></label>
+                <ul class="sub_checkbox" id="SubCheckList">
+                    <li><input type="checkbox" name="checkBoxList" value="checkBox-sub1" id="checkBox-sub1"
+                               class="checkbox-input">
+                        <label for="checkBox-sub1" class="checkbox-custom-label"><strong>설치근거·목적</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub1">
+                            <li>설치근거·목적<input type="text" id="purpose" name="purpose" class="form-input"
+                                              placeholder="ex) 시설안전, 화재예방, 범죄예방"></li>
+                        </ul>
+                    </li>
+                    <li><input type="checkbox" name="checkBoxList" value="checkBox-sub2" id="checkBox-sub2"
+                               class="checkbox-input">
+                        <label for="checkBox-sub2" class="checkbox-custom-label"><strong>설치 대수, 설치 위치, 촬영
+                            범위</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub2">
+                            <li>설치 대수<input type="text" id="installation_number" name="installation_number"
+                                            class="form-input" placeholder="ex) 1000대"></li>
+                            <li>설치 위치 및 촬영범위<input type="text" id="installation_location" name="installation_location"
+                                                   class="form-input" placeholder="ex) 건물 출입구, 복도, 기숙사 내/외부"></li>
+                        </ul>
+                    </li>
+                    <li><input type="checkbox" name="checkBoxList" value="checkBox-sub3" id="checkBox-sub3"
+                               class="checkbox-input">
+                        <label for="checkBox-sub3" class="checkbox-custom-label"><strong>관리책임자, 담당부서 및 영상정보에 대한
+                            접근권한자</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub3">
+                            <li>관리 책임자(직위/소속/연락처)<input type="text" id="manager" name="manager" class="form-input"
+                                                        placeholder="ex) 총무팀장/총무팀/02-0000-0000"></li>
+                            <li>접근 권한자(직위/소속/연락처)<input type="text" id="access_authority" name="access_authority"
+                                                        class="form-input" placeholder="ex) 총무팀장/총무팀/02-0000-0000">
+                            </li>
+                        </ul>
+                    </li>
+                    <li><input type="checkbox" name="checkBoxList" value="checkBox-sub4" id="checkBox-sub4"
+                               class="checkbox-input">
+                        <label for="checkBox-sub4" class="checkbox-custom-label"><strong>영상정보 촬영시간, 보관기간, 보관장소,
+                            처리방법</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub4">
+                            <li>촬영 시간<input type="text" id="shooting_time" name="shooting_time" class="form-input"
+                                            placeholder="ex) 24시간"></li>
+                            <li>보관 기간<input type="text" id="storage_period" name="storage_period" class="form-input"
+                                            placeholder="ex) 촬영일로부터 15일"></li>
+                            <li>보관 장소<input type="text" id="storage_location" name="storage_location" class="form-input"
+                                            placeholder="ex) 상황실 (보관시설 명)"></li>
+                            <li>처리 방법
+                                <br>
+                                ※ 이 항목은 해당 시 의무적으로 작성해야 할 필수 항목으로 본 프로그램의 추천문구로
+                                    작성됩니다. 필요 시 수정 가능합니다.
+                                <div class="form-input">
+                                <textarea id="processing_method" name="processing_method">‣  개인영상정보의 목적 외 이용, 제3자 제공, 파기, 열람 등 요구에 관한 사항을 기록ㆍ관리하고, 보관기간 만료시 복원이 불가능한 방법으로 영구 삭제(출력물의 경우 파쇄 또는 소각)합니다.</textarea>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li><input type="checkbox" name="checkBoxList" value="checkBox-sub5" id="checkBox-sub5"
+                               class="checkbox-input">
+                        <label for="checkBox-sub5" class="checkbox-custom-label"><strong>영상정보처리기기 설치 및 관리 등의 위탁에 관한 사항
+                            [해당시 의무작성]</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub5">
+                            <li>수탁업체<input type="text" id="trustee" name="trustee" class="form-input" placeholder="기업명">
+                            </li>
+                            <li>연락처<input type="text" id="trustee_tel" name="trustee_tel" class="form-input"
+                                          placeholder="연락처"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="checkBoxList" value="checkBox-sub6" id="checkBox-sub6"
+                               class="checkbox-input">
+                        <label for="checkBox-sub6" class="checkbox-custom-label"><strong>영상정보 확인 방법 및
+                            장소</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub6">
+                            <li>확인 방법<input type="text" id="checking_method" name="checking_method" class="form-input"
+                                            placeholder="ex) 관리책임자에게 요구, 접근권한자에게 미리 연락 후 기관 방문"></li>
+                            <li>확인 장소<input type="text" id="checking_location" name="checking_location"
+                                            class="form-input" placeholder="ex) 상황실"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="checkBoxList" value="checkBox-sub7" id="checkBox-sub7"
+                               class="checkbox-input">
+                        <label for="checkBox-sub7" class="checkbox-custom-label"><strong>정보주체의 영상정보 열람 등 요구에 대한
+                            조치</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub7">
+                            <p>※ 이 항목은 해당 시 의무적으로 작성해야 할 필수 항목으로 본 프로그램의 추천문구로 작성됩니다. 필요 시 수정 가능합니다.</p>
+                            <div class="form-input">
+                                <textarea id="requestView" name="requestView">‣  귀하는 개인영상정보에 관하여 열람 또는 존재확인ㆍ삭제를 원하는 경우 언제든지 영상정보처리기기 운영자에게 요구하실 수 있습니다.
+‣  단, 귀하가 촬영된 개인영상정보 및 명백히 정보주체의 급박한 생명, 신체, 재산의 이익을 위하여 필요한 개인영상정보에 한정됩니다.
+‣  본 기관은 개인영상정보에 관하여 열람 또는 존재확인ㆍ삭제를 요구한 경우 지체없이 필요한 조치를 하겠습니다.</textarea>
+                                </div>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="checkBoxList" value="checkBox-sub8" id="checkBox-sub8"
+                               class="checkbox-input">
+                        <label for="checkBox-sub8" class="checkbox-custom-label"><strong>영상정보 보호를 위한 안전성 확보 조치</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub8">
+                                <p>※ 이 항목은 해당 시 의무적으로 작성해야 할 필수 항목으로 본 프로그램의 추천문구로 작성됩니다. 필요 시 수정 가능합니다.</p>
+                            <div class="form-input">
+                                <textarea id="stability" name="stability">‣  본 기관에서 처리하는 영상정보는 암호화 조치 등을 통하여 안전하게 관리되고 있습니다.
+‣  또한 본 기관은 개인영상정보보호를 위한 관리적 대책으로서 개인정보에 대한 접근 권한을 차등부여하고 있고, 개인영상정보의 위ㆍ변조 방지를 위하여 개인영상정보의 생성 일시, 열람시 열람 목적ㆍ열람자ㆍ열람 일시 등을 기록하여 관리하고 있습니다.
+‣  이 외에도 개인영상정보의 안전한 물리적 보관을 위하여 잠금장치를 설치하고 있습니다</textarea>
+                                </div>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="checkBoxList" value="checkBox-sub9" id="checkBox-sub9"
+                               class="checkbox-input">
+                        <label for="checkBox-sub9" class="checkbox-custom-label"><strong>영상정보처리기기 운영·관리 방침의 변경에 관한
+                            사항</strong></label>
+                        <ul class="sub2-checklist" id="checkBox2-sub9">
+                            <li>
+                                <div>
+                                    <label>현재 처리방침 적용 날짜</label>
+                                    <input type="date" id="current_date" name="current_date" class="form-input">
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 두번재 checkbox(만14세 미만 아동) -->
+        <div class="form-group">
+            <div class="checkbox-option">
+                <input type="checkbox" id="checkBox2" name="checkBox2"
+                       value="checkBox2"
+                       class="checkbox-input">
+                <label for="checkBox2" class="checkbox-custom-label"><strong>만 14세 미만 아동의 개인정보 처리에 관한
+                    사항</strong></label>
+
+                <ul class="sub_checkbox" id="SubCheckList2">
+                    <div><strong>만 14세 미만 아동 가입</strong><input type="radio" name="radio14" value="yes">예
+                        <input type="radio" name="radio14" value="no">아니오
+                    </div>
+                    <div>
+                        <p><strong><14세 미만 아동이 가입 불가능한 경우></strong></p>
+                        <p><strong>{{ companyName }}</strong>는 만14세 미만 아동의 회원가입을 받지 않으며, 개인정보 수집을 하지 않습니다.</p>
+                    </div>
+                    <div>
+                        <p><strong><14세 미만 아동 가입 가능한 경우></strong></p>
+                        <p> - <strong>{{ companyName }}</strong>는 만14세 미만 아동의 회원가입을 받지 않으며, 개인정보 수집을 하지 않습니다.</p>
+                        <p> - 만 14세 미만 아동회원 및 법정 대리인의 정보는 관련 법령이 허용하는 용도 이외에는 어떠한 용도로도 사용하지 않습니다.</p>
+                        <p> - 부모님 등 법정대리인의 요청이 있을 경우 아동회원의 개인정보의 열람·변경·탈퇴가 가능합니다.</p>
+                        <p> - 만 14세 미만 아동회원에게는 광고메일을 보내지 않으며, 게임 및 이벤트를 이용하여 더 많은 정보를 공개하도록 유도하지 않습니다.</p>
+
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- 제출 버튼 -->
+        <div class="submit-div">
+            <button type="submit" class="submit-button" name="action" value="confirm">미리보기</button>
+            <button type="submit" class="submit-button" name="action" value="result">최종결과</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const Checkbox = document.getElementById('checkBox1');
+    const SubChecklist = document.getElementById('SubCheckList');
+
+    Checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            SubChecklist.style.display = 'block';
+        } else {
+            SubChecklist.style.display = 'none';
+        }
+    });
+    const Checkbox2 = document.getElementById('checkBox2');
+    const SubChecklist2 = document.getElementById('SubCheckList2');
+
+    Checkbox2.addEventListener('change', function() {
+        if (this.checked) {
+            SubChecklist2.style.display = 'block';
+        } else {
+            SubChecklist2.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox1 = document.getElementById('checkBox-sub1');
+    const Sub2Checklist1 = document.getElementById('checkBox2-sub1');
+
+    SubCheckbox1.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist1.style.display = 'block';
+        } else {
+            Sub2Checklist1.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox2 = document.getElementById('checkBox-sub2');
+    const Sub2Checklist2 = document.getElementById('checkBox2-sub2');
+
+    SubCheckbox2.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist2.style.display = 'block';
+        } else {
+            Sub2Checklist2.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox3 = document.getElementById('checkBox-sub3');
+    const Sub2Checklist3 = document.getElementById('checkBox2-sub3');
+
+    SubCheckbox3.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist3.style.display = 'block';
+        } else {
+            Sub2Checklist3.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox4 = document.getElementById('checkBox-sub4');
+    const Sub2Checklist4 = document.getElementById('checkBox2-sub4');
+
+    SubCheckbox4.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist4.style.display = 'block';
+        } else {
+            Sub2Checklist4.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox5 = document.getElementById('checkBox-sub5');
+    const Sub2Checklist5 = document.getElementById('checkBox2-sub5');
+
+    SubCheckbox5.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist5.style.display = 'block';
+        } else {
+            Sub2Checklist5.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox6 = document.getElementById('checkBox-sub6');
+    const Sub2Checklist6 = document.getElementById('checkBox2-sub6');
+
+    SubCheckbox6.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist6.style.display = 'block';
+        } else {
+            Sub2Checklist6.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox7 = document.getElementById('checkBox-sub7');
+    const Sub2Checklist7 = document.getElementById('checkBox2-sub7');
+
+    SubCheckbox7.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist7.style.display = 'block';
+        } else {
+            Sub2Checklist7.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox8 = document.getElementById('checkBox-sub8');
+    const Sub2Checklist8 = document.getElementById('checkBox2-sub8');
+
+    SubCheckbox8.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist8.style.display = 'block';
+        } else {
+            Sub2Checklist8.style.display = 'none';
+        }
+    });
+
+    const SubCheckbox9 = document.getElementById('checkBox-sub9');
+    const Sub2Checklist9 = document.getElementById('checkBox2-sub9');
+
+    SubCheckbox9.addEventListener('change', function() {
+        if (this.checked) {
+            Sub2Checklist9.style.display = 'block';
+        } else {
+            Sub2Checklist9.style.display = 'none';
+        }
+    });
+
+        document.getElementById('addDateButton').addEventListener('click', function() {
+        // 새로운 div 요소 생성
+        var newDiv = document.createElement('div');
+
+        // 첫 번째 날짜 입력 필드 생성 및 설정
+        var newInput1 = document.createElement('input');
+        newInput1.type = 'date';
+        newInput1.name = 'start_date';
+        newInput1.className = 'form-input';
+
+        // <p> 요소 생성 및 '~' 텍스트 설정
+        var pElement = document.createElement('p');
+        pElement.innerText = ' ~ '; // 혹은 pElement.textContent = ' ~ ';
+        pElement.style.display = 'inline'; // <p>를 인라인 요소처럼 보이도록 설정
+
+        // 두 번째 날짜 입력 필드 생성 및 설정
+        var newInput2 = document.createElement('input');
+        newInput2.type = 'date';
+        newInput2.name = 'end_date';
+        newInput2.className = 'form-input';
+
+        // 새로운 div에 첫 번째 입력 필드, <p> 요소, 두 번째 입력 필드 추가
+        newDiv.appendChild(newInput1);
+        newDiv.appendChild(pElement);
+        newDiv.appendChild(newInput2);
+
+        // 날짜 입력 필드를 담고 있는 컨테이너에 새로운 div 요소 추가
+        document.getElementById('dateInputsContainer').appendChild(newDiv);
+    });
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('privacyForm').addEventListener('submit', function(e) {
+            var manager = document.getElementById('manager').value;
+            // 접근 권한자 필드 값 검사
+            var accessAuthority = document.getElementById('access_authority').value;
+            // 정규 표현식을 사용한 형식 검증
+            var regex = /^[^\/]+\/[^\/]+\/[^\/]+$/; // "직위/소속/연락처" 형식 검증
+            if(manager || accessAuthority){
+                if (!regex.test(manager)) {
+                    alert('관리 책임자 정보와 접근 권한자는 "직위/소속/연락처" 형식으로 입력해야 합니다.');
+                    e.preventDefault(); // 폼 제출 중단
+                }
+                else if (!regex.test(accessAuthority)) {
+                    alert('관리 책임자 정보와 접근 권한자는 "직위/소속/연락처" 형식으로 입력해야 합니다.');
+                    e.preventDefault(); // 폼 제출 중단
+                }es
+            }
+
+
+        });
+    });
+</script>
+<script>
+    window.onload = function () {
+        var message = "{{ error }}";
+        if (message) {
+            alert(message);
+        }
+    }
+</script>
+</body>
+</html>
